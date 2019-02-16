@@ -1,3 +1,9 @@
+/*
+Creational Design Pattern
+Used to have only one instance of the class at all times.
+
+We store reference to the object so that we have to create it only once
+ */
 package main
 
 import (
@@ -22,4 +28,12 @@ func newSingleton() *singleton {
 
 func (s singleton) printInt() {
 	fmt.Printf("My int is %d\n", s.myInt)
+}
+
+func main() {
+	singleton := newSingleton()
+	singleton2 := newSingleton()
+
+	singleton.printInt()
+	singleton2.printInt()
 }
